@@ -1,0 +1,21 @@
+{
+  "name": "Nedzmin Cancar Portfolio",
+  "short_name": "Nedzmin",
+  "description": "Portfolio di Nedzmin Cancar, Sviluppatore Software.",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png", // <<<=== Assicurati che il path e nome siano corretti
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png", // <<<=== Assicurati che il path e nome siano corretti
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d1f", // Colore sfondo PWA
+  "theme_color": "#05050a" // Colore barra tema
+}

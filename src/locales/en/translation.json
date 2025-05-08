@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact",
+    "linkedin": "LinkedIn Profile",
+    "github": "GitHub Profile",
+    "mobileDev": "Mobile App Developer",
+    "softwareDev": "Software Developer",
+    "frontendDev": "Front-End Developer",
+    "digitalStrat": "Digital Strategist"
+  },
+  "leftSideInfo": {
+    "title": "React Specialist]"
+  },
+  "hero": {
+    "greeting": "Hi, I am",
+    "cvButton": "Download CV",
+    "contactButton": "Contact Me",
+    "status": "Open to work"
+  },
+  "techStack": {
+    "title": "Technologies"
+  },
+  "techShowcase": {
+    "greeting": "Hi, I'm Nedzmin Cancar.",
+    "headlinePart1": "Developer ",
+    "headlinePart2": "Java, React & Next.js "
+  },
+  "projects": {
+    "sectionTitle": "Recent Projects",
+    "codenedWeb": { "title": "CodeNed (Web)", "description": "Website creation and digital marketing." },
+    "shopifyStore": { "title": "Shopify Store", "description": "E-commerce for sustainable goods." },
+    "appPreventiviJava": { "title": "Quote Manager (Desktop)", "description": "Java Swing application for creating quotes." },
+    "appPreventiviAndroid": { "title": "Quote App (Android)", "description": "Mobile version for quote management." },
+    "codenedMobile": { "title": "CodeNed (Mobile)", "description": "React Native app for CodeNed services." },
+    "lilmetal": { "title": "Lil Metal", "description": "Showcase site for welding and metalwork services." },
+    "githubLink": "View Code",
+    "detailsLink": "Project Details"
+  },
+  "aboutMe": {
+    "sectionTitle": "About Me",
+    "bioParagraph1": "Hi! I'm Nedzmin Cancar, a software developer originally from Bosnia and Herzegovina, now based in Italy. Passion for computing has always driven me.",
+    "bioParagraph2": "In 2021, I began an intensive training program at IT Academy, completed in 2023, building a solid foundation in software development, particularly with Java and the web stack (HTML, CSS, JS, MySQL).",
+    "bioParagraph3": "Driven by a desire to grow, I've continuously studied independently, expanding my skills to modern technologies like React, Next.js, Tailwind CSS, and Android development (Kotlin).",
+    "bioParagraph4": "For me, development is more than a job: it's a passion I cultivate daily by seeking new challenges and creative solutions. As a freelancer, I'm ready and enthusiastic to apply my skills to new and exciting projects."
+  },
+  "contact": {
+    "title": "Contact Me",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "sendButton": "Send Message",
+    "submitting": "Sending...",
+    "submitSuccess": "Message sent successfully!",
+    "submitError": "Error sending message. Please try again later."
+  },
+  "footer": {
+    "rightsReserved": "Tutti i diritti riservati.",
+    "privacyPolicy": "Privacy Policy",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "common": {
+    "backToHome": "Torna alla Home"
+  },
+  "privacyPolicy": {
+    "lastUpdated": "Ultimo aggiornamento: 07/05/2025",
+    "sectionTitle": "Privacy Policy",
+    "introduction": "Questa pagina descrive come vengono trattati i dati personali degli utenti che consultano questo sito web.",
+    "dataControllerTitle": "1. Titolare del Trattamento",
+    "dataControllerContent": "Il Titolare del trattamento dei dati personali è Nedzmin Cancar. Puoi contattarmi all'indirizzo email: pp@nedzmincancar.com.",
+    "dataCollectedTitle": "2. Tipi di Dati Raccolti",
+    "dataCollectedContent": "Dati forniti volontariamente dall'utente: L'invio facoltativo, esplicito e volontario di posta elettronica agli indirizzi indicati su questo sito o la compilazione del form di contatto comporta la successiva acquisizione dell'indirizzo del mittente, necessario per rispondere alle richieste, nonché degli eventuali altri dati personali inseriti nella missiva (nome, messaggio). Dati di Navigazione: I sistemi informatici e le procedure software preposte al funzionamento di questo sito web acquisiscono, nel corso del loro normale esercizio, alcuni dati personali la cui trasmissione è implicita nell'uso dei protocolli di comunicazione di Internet (es. indirizzi IP, tipo di browser). Questi dati vengono utilizzati al solo fine di ricavare informazioni statistiche anonime sull'uso del sito e per controllarne il corretto funzionamento.",
+    "purposeTitle": "3. Finalità del Trattamento",
+    "purposeContent": "I dati personali forniti dagli utenti sono utilizzati al solo fine di rispondere alle richieste inviate tramite form di contatto o email.",
+    "storageTitle": "4. Conservazione dei Dati",
+    "storageContent": "I dati sono trattati e conservati per il tempo richiesto dalle finalità per le quali sono stati raccolti.",
+    "rightsTitle": "5. Diritti dell'Interessato",
+    "rightsContent": "Hai il diritto di ottenere la conferma dell'esistenza o meno di dati personali che ti riguardano, di conoscerne il contenuto e l'origine, verificarne l'esattezza o chiederne l'integrazione o l'aggiornamento, oppure la rettificazione. Hai altresì il diritto di chiedere la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge, nonché di opporti in ogni caso, per motivi legittimi, al loro trattamento. Le richieste vanno rivolte al Titolare del Trattamento.",
+    "changesTitle": "6. Modifiche a questa Privacy Policy",
+    "changesContent": "Il Titolare del Trattamento si riserva il diritto di apportare modifiche alla presente privacy policy in qualunque momento dandone pubblicità agli Utenti su questa pagina."
+  },
+  "cookiePolicy": {
+    "lastUpdated": "Ultimo aggiornamento: 07/05/2025",
+    "sectionTitle": "Cookie Policy",
+    "whatAreCookiesTitle": "1. Cosa Sono i Cookie",
+    "whatAreCookiesContent": "I cookie sono piccoli file di testo che i siti visitati dagli utenti inviano ai loro terminali, dove vengono memorizzati per essere poi ritrasmessi agli stessi siti alla successiva visita. Questo sito utilizza principalmente cookie tecnici.",
+    "technicalCookiesTitle": "2. Cookie Tecnici Utilizzati",
+    "technicalCookiesContent": "Cookie tecnici necessari: Utilizziamo cookie strettamente necessari per garantire il corretto funzionamento del sito e per salvare le preferenze dell'utente (ad esempio, la lingua selezionata). Questi cookie non richiedono il consenso preventivo. Cookie di terze parti (se presenti): [SE USI GOOGLE ANALYTICS, FONT, ECC., DESCRIVILI QUI E LINKA LE LORO POLICY. Esempio: Potremmo utilizzare Google Analytics con IP anonimizzato per analizzare il traffico. Per maggiori info: [Link a policy Google]].",
+    "consentTitle": "3. Consenso e Gestione dei Cookie",
+    "consentContent": "Ad eccezione dei cookie tecnici strettamente necessari, l'installazione degli altri cookie (analitici, di profilazione) dipende dalla volontà dell'utente. Puoi gestire le preferenze relative ai Cookie direttamente all'interno del tuo browser ed impedire – ad esempio – che terze parti possano installarne. Tramite le preferenze del browser è inoltre possibile eliminare i Cookie installati in passato.",
+    "moreInfoTitle": "4. Maggiori Informazioni",
+    "moreInfoContent": "Per maggiori dettagli sulla gestione dei cookie nel tuo browser, consulta le guide specifiche del browser che utilizzi."
+  }
+}

@@ -1,0 +1,161 @@
+/* --- Navbar Base (Unica per tutte le dimensioni) --- */
+.navbar {
+    position: fixed; top: 0; left: 0; width: 100%; height: 70px;
+    display: flex; align-items: center; justify-content: space-between; /* Logo a sx, resto a dx */
+    padding: 0 1.5rem; /* Padding laterale (regola se necessario) */
+    background-color: rgba(5, 5, 10, 0.7);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+}
+
+/* Logo (Sempre Visibile) */
+.navbar__logo { line-height: 1.2; flex-shrink: 0; /* Non farlo restringere */}
+.navbar__logo-name { /* ... stili nome ... */ }
+.navbar__logo-title-wrapper { /* ... stili wrapper titolo ... */ }
+.navbar__logo-title { /* ... stili titolo ... */ }
+
+/* Contenitore Centrale per la Navigazione */
+/* Questo serve per poter centrare la capsula se necessario o posizionarla */
+.navbar__main-navigation-container {
+    flex-grow: 1; /* Occupa lo spazio tra logo e eventuali elementi a destra */
+    display: flex;
+    justify-content: center; /* Centra la capsula al suo interno */
+    /* Se vuoi la capsula più a destra: */
+    /* justify-content: flex-end; */
+    /* padding-right: 1rem; // Aggiungi padding se sposti a destra */
+}
+
+/* Capsula Navigazione (Contiene tutte le icone) */
+.navbar__navigation {
+    display: flex; align-items: center; gap: 0.5rem; /* Spazio tra icone */
+    background-color: rgba(30, 30, 50, 0.8); /* Leggermente più opaco? */
+    padding: 0.5rem 1rem; /* Padding capsula */
+    border-radius: 50px; border: 1px solid var(--border-light);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    /* Permetti scroll orizzontale se le icone non entrano */
+    overflow-x: auto;
+    scrollbar-width: none; /* Nasconde scrollbar (Firefox) */
+    max-width: 100%; /* Non superare larghezza contenitore */
+}
+.navbar__navigation::-webkit-scrollbar { display: none; /* Nasconde scrollbar (WebKit) */ }
+
+/* Icone/Link Navigazione */
+.navbar__link {
+    background: none; border: none; color: var(--text-secondary);
+    font-size: 1.1rem; /* Dimensione icone */
+    line-height: 1; cursor: pointer; padding: 0.4rem; /* Padding icona */
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    box-shadow: none; text-decoration: none; -webkit-appearance: none; appearance: none;
+    flex-shrink: 0; /* Non far restringere le icone */
+}
+.navbar__link svg { display: block; width: 1em; height: 1em; fill: currentColor; }
+.navbar__link:hover, .navbar__link.active { color: var(--accent-cyan); }
+.navbar__link.active { transform: scale(1.1); }
+
+/* Divisore */
+.navbar__divider {
+    height: 18px; width: 1px; background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 0.5rem; align-self: center; flex-shrink: 0;
+}
+
+/* Stile specifico opzionale per icona lingua */
+.navbar__link--language:hover {
+    color: white; /* O un altro colore per distinguerla */
+}
+
+/* Rimosse tutte le regole per .navbar__language-desktop, .navbar__language-mobile,
+   .navbar__center-desktop (come contenitore separato), .navbar__right-elements,
+   e TUTTA la @media (max-width: 767px) specifica per la navbar. */
+
+/* Mantieni gli stili per .page-wrapper e .main-content-area per il footer sticky */
+.page-wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content-area { flex-grow: 1; padding-top: 70px; } /* Altezza navbar desktop */
+.site-footer {
+    background: transparent;
+    border-top: none;
+    padding: 0; /* O il tuo padding ridotto preferito */
+    text-align: center;
+    margin-top: auto; /* Spinge il footer in fondo */
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+    flex-shrink: 0; /* <<<=== AGGIUNTO: Impedisce al footer di rimpicciolirsi se il contenuto è troppo lungo */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    /* section-container dovrebbe gestire padding laterale e max-width */
+}
+
+/* Icone Social nel Footer */
+.footer-social-icons {
+    display: flex;
+    gap: 1rem; /* Riduci un po' */
+    margin-bottom: 0.5rem; /* Spazio minimo sotto le icone */
+}
+.footer-social-link {
+    color: #c2c2c3;
+    font-size: 1.5rem; /* Icone social più piccole */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-social-link:hover {
+    color: var(--accent-cyan);
+    transform: scale(1.1);
+}
+
+/* Testo Copyright */
+.footer-copyright {
+    font-size: 1rem; /* Testo copyright molto piccolo */
+    color: #c2c2c3;
+    margin: 0;
+}
+
+/* Link Privacy e Cookie Policy */
+.footer-policy-links {
+    font-size: 0.8rem; /* Testo policy molto piccolo */
+    display: flex;
+    gap: 0.3rem; /* Spazio minimo */
+    align-items: center;
+}
+.footer-policy-link {
+    color: #c2c2c3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer-policy-link:hover {
+    color: var(--accent-cyan);
+    text-decoration: underline;
+}
+.footer-policy-separator {
+    color: #c2c2c3;
+    opacity: 0.6; /* Separatore più leggero */
+    margin: 0 0.1rem; /* Avvicina */
+}
+
+/* --- Media Query per Navbar Mobile --- */
+@media (max-width: 767px) {
+    .main-content-area { padding-top: 60px; } /* Altezza navbar mobile */
+    .navbar { padding: 0 1rem; height: 60px; } /* Padding navbar mobile */
+    .site-footer {
+        padding: 0; /* Padding minimo per mobile */
+    }
+    .footer-content {
+        gap: 0.5rem; /* Gap minimo */
+    }
+    .footer-social-icons {
+        gap: 1rem;
+        font-size: 1.1rem; /* Icone ancora più piccole */
+    }
+    .footer-copyright,
+    .footer-policy-links {
+        font-size: 0.6rem; /* Testo ancora più piccolo */
+    }
+    .main-content-area {
+        padding-top: 60px; /* Aggiusta per altezza navbar mobile */
+    }
+}

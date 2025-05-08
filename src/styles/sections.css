@@ -1,0 +1,467 @@
+/* src/styles/sections.css */
+
+/* --- Stili Hero Section (Testo Intro + Bottoni/Badge) --- */
+.hero-section {
+    /* section-container gestisce padding laterale/max-width */
+    min-height: 60vh; /* Altezza minima */
+    padding-top: 260px; /* Spazio sotto navbar - REGOLA SE NECESSARIO */
+    padding-bottom: 2rem; /* Spazio sotto il badge */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+/* Contenitore per il Testo Introduttivo */
+.intro-text {
+    margin-bottom: 4rem; /* Spazio tra testo e bottoni */
+    max-width: 900px; /* Larghezza massima testo */
+    width: calc(100% - 2rem);
+}
+
+.intro-text__greeting {
+    font-size: 1.3rem; /* Dimensione saluto */
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+/* Stili per l' Headline con Animazione Scrittura */
+.intro-text__headline {
+    font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.25;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    /* Proprietà per animazione scrittura */
+    overflow: hidden;
+    border-right: .1em solid var(--accent-cyan); /* Cursore */
+    white-space: nowrap;
+    margin: 0 auto;
+    /* letter-spacing: .08em; // Commentato/Rimosso */
+    width: 0; /* Inizia senza larghezza */
+    /* Animazione */
+    /* REGOLA steps(NUMERO) in base ai caratteri reali! */
+    animation:
+            typing 4.5s steps(40, end) forwards, /* Esempio steps: 40 */
+            blink-caret .75s step-end infinite;
+    max-width: none; /* Assicura che non sia limitato internamente */
+}
+.intro-text__headline--highlight {
+    color: var(--accent-cyan);
+}
+
+/* Bottoni (sotto il testo intro) */
+.hero__buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem; /* Spazio tra bottoni e badge */
+}
+
+/* ---> INIZIO STILI BADGE MANCANTI <--- */
+/* Badge Disponibilità (sotto i bottoni) */
+.hero__availability-badge {
+    background-color: var(--badge-green-bg); /* Sfondo trasparente verde acqua */
+    color: var(--badge-green);                /* Testo verde acqua */
+    border: 1px solid var(--badge-green-border); /* Bordo verde acqua sottile/trasparente */
+    padding: 0.4em 0.8em;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-flex; align-items: center; gap: 0.4em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, border-width 0.3s ease, box-shadow 0.3s ease-out, transform 0.2s ease;
+    position: relative; /* Per glow */
+}
+
+.hero__availability-badge::before {
+    /* Pallino verde animato */
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--badge-green);
+    border-radius: 50%;
+    animation: pulse 2s infinite; /* Applica animazione pulse */
+}
+
+.hero__availability-badge:hover {
+    background-color: rgba(45, 212, 191, 0.2); /* Sfondo diventa leggermente più opaco/verde */
+    color: white; /* Testo diventa bianco (o più luminoso) */
+    border-width: 2px; /* Bordo diventa più spesso */
+    border-color: var(--badge-green); /* Bordo diventa VERDE PIENO */
+    box-shadow: 0 0 12px 2px var(--badge-green); /* Glow verde acqua */
+    transform: scale(1.05);
+}
+/* ---> FINE STILI BADGE MANCANTI <--- */
+
+
+/* --- Stili Tech Showcase / Slider (SOLO SLIDER) --- */
+.tech-slider-section {
+    padding-top: 0;
+    padding-bottom: 15rem; /* Mantiene spazio sotto */
+    width: 100%;
+    margin-top: 5rem; /* Mantiene spazio sopra */
+    /* ---> AGGIUNGI MARGINE SOTTO PER SPAZIO EXTRA <--- */
+    margin-bottom: 4rem; /* <<<=== REGOLA QUESTO VALORE (es. 3rem, 4rem, 5rem) */
+}
+.tech-slider__wrapper {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+.tech-slider__content {
+    display: flex; width: max-content; flex-shrink: 0;
+    animation: scrollIcons 35s linear infinite; will-change: transform;
+}
+.tech-slider__content:hover { animation-play-state: paused; }
+.tech-slider__icon-item {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 1.8rem; flex-shrink: 0;
+}
+.tech-slider__icon {
+    font-size: 2.8rem; color: var(--text-secondary); opacity: 0.6;
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+.tech-slider__icon-item:hover .tech-slider__icon {
+    color: var(--text-primary); opacity: 1; transform: scale(1.1);
+}
+
+
+/* --- Contact Section --- */
+.contact-section {
+    padding-top: 5rem; /* Aumenta un po' per più spazio sopra titolo */
+    padding-bottom: 6rem;
+}
+/* Titolo Sezione Contatti */
+.contact-section .section-title { /* Usa la classe section-title se presente */
+    font-size: clamp(2.2rem, 6vw, 3.2rem); /* <<<=== AUMENTA DIMENSIONE TITOLO */
+    margin-bottom: 3.5rem; /* Spazio sotto titolo */
+}
+/* Rimuovi ::after se non vuoi la linea sotto il titolo "Contattami" */
+.contact-section .section-title::after {
+    display: none; /* Nasconde la linea azzurra sotto */
+}
+/* ---> STILI PER ICONE SOCIAL <--- */
+.contact-social-icons {
+    display: flex;
+    justify-content: center; /* Centra le icone */
+    gap: 2.5rem; /* Spazio tra le icone */
+    margin-bottom: 3.5rem; /* Spazio sotto le icone, prima del form */
+}
+
+.social-icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 60px; height: 60px; border-radius: 50%;
+    font-size: 1.8rem; /* <<<=== RIDUCI LEGGERMENTE ICONA INTERNA (o aumenta il cerchio) */
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Ombra più simile al desiderato */
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+}
+.social-icon:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+/* Colori specifici per icona */
+.social-icon.whatsapp { background-color: #25D366; } /* Verde WhatsApp */
+.social-icon.email    { background-color: #D44638; } /* Rosso Gmail/Email */
+.social-icon.linkedin { background-color: #0A66C2; } /* Blu LinkedIn */
+/* --- FINE STILI ICONE SOCIAL --- */
+
+
+/* Form Contatti */
+.contact-form {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    width: 100%;
+    max-width: 500px; /* <<<=== Riduci leggermente max-width per farlo sembrare più compatto */
+    margin: 0 auto;    /* Mantiene centratura */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;       /* <<<=== Riduci gap tra i form-group */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column; /* Label sopra l'input */
+    width: 100%; /* Occupa tutta la larghezza disponibile nel form */
+}
+/* Label Campi Form */
+.form-group label {
+    margin-bottom: 0.5rem; /* Ridotto spazio sotto label */
+    font-size: 0.8rem;   /* Label più piccola */
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-align: left;    /* Mantiene label a sinistra */
+    padding-left: 0.25rem; /* Piccolo padding per staccarla dal bordo input (opzionale) */
+}
+.form-group input, .form-group textarea {
+    background-color: rgba(50, 55, 75, 0.85); /* Sfondo campi (come prima) */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.8em 1em; /* Leggermente meno padding verticale */
+    font-size: 0.9rem;  /* Testo input più piccolo */
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: border-color var(--transition-fast), box-shadow 0.2s ease, background-color 0.2s ease;
+    width: 100%; /* <<<=== FA SÌ CHE L'INPUT OCCUPI TUTTA LA LARGHEZZA DEL .form-group */
+    box-sizing: border-box; /* Include padding e bordo nella larghezza */
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { /* Stile per placeholder */
+    color: var(--text-secondary);
+    opacity: 0.6;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-cyan); /* Bordo ciano su focus */
+    background-color: rgba(40, 45, 65, 0.9); /* Sfondo leggermente diverso su focus */
+    box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.25);
+}
+.form-group textarea { min-height: 140px; resize: vertical; } /* Leggermente più alta */
+
+/* Bottone Invia Messaggio con Gradiente (usa classe da ButtonNeon) */
+.contact-submit-button {
+    border: 1px solid transparent; /* Bordo trasparente per far risaltare lo shadow */
+    /* Inizialmente, usiamo un bordo trasparente o un bordo molto sottile del colore del gradiente */
+    /* border-image-slice: 1; */ /* Necessario per bordo gradiente, ma box-shadow è più semplice per glow */
+    color: white !important;
+    background-image: linear-gradient(to right, #43a4ed 0%, #242549 100%);
+    padding: 0.9em 2.2em; font-weight: 600; text-transform: uppercase;
+    border-radius: 50px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease-out; /* Aggiunta transizione box-shadow */
+    box-shadow: 0 5px 15px rgba(67, 164, 237, 0.2); /* Ombra base leggera */
+    width: fit-content; align-self: center; font-size: 0.9rem;
+    position: relative; /* Per glow */
+}
+
+.contact-submit-button:hover:not(:disabled) {
+    /* Il background-image rimane (o scurisce leggermente come prima) */
+    background-image: linear-gradient(to right, #3a92d1 0%, #1f203f 100%);
+    color: white !important;
+    transform: translateY(-2px) scale(1.02);
+    /* Glow più intenso con i colori del gradiente */
+    box-shadow: 0 0 20px 5px rgba(67, 164, 237, 0.5), /* Glow dal blu chiaro */
+    0 0 15px 3px rgba(36, 37, 73, 0.4);  /* Glow dal blu scuro */
+}
+
+.contact-submit-button:disabled {
+    background-image: linear-gradient(to right, #7ca9c9 0%, #4a4b6b 100%);
+    cursor: not-allowed;
+}
+
+
+.form-status-message {
+    text-align: center;  /* <<<=== CENTRA IL TESTO */
+    margin-top: 1.5rem;  /* <<<=== AUMENTA SPAZIO SOPRA IL MESSAGGIO */
+    font-weight: 500;
+    font-size: 0.9rem;   /* Dimensione testo messaggio */
+    width: 100%;       /* Occupa la larghezza del form per centrarsi correttamente */
+    padding: 0 1rem;   /* Aggiungi padding laterale se necessario */
+    box-sizing: border-box;
+}
+.form-status-message.success {
+    color: var(--badge-green); /* Verde per successo */
+}
+.form-status-message.error {
+    color: #ff4d4d; /* Rosso per errore */
+}
+
+/* ... (Keyframes) ... */
+
+/* src/styles/sections.css */
+
+/* ... (stili esistenti per Hero, Slider, Progetti, Contatto) ... */
+
+/* --- Sezione About Me --- */
+.about-section {
+    padding-top: 5rem; /* Spazio sopra il titolo */
+    padding-bottom: 5rem; /* Spazio sotto */
+}
+
+.about-section__title {
+    font-size: clamp(2rem, 5vw, 2.8rem); /* Dimensione standard titoli sezione */
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center; /* Centrato */
+    margin-bottom: 3.5rem; /* Spazio sotto (come .section-title) - REGOLA */
+    /* Nessuna definizione ::after qui = nessuna linea */
+}
+
+/* Contenitore flessibile per layout (utile se aggiungi immagine) */
+.about-content-wrapper {
+    display: flex; /* Preparato per eventuale layout a colonne */
+    justify-content: center; /* Centra box testo se è l'unico elemento */
+    align-items: center; /* Allinea verticalmente se c'è immagine */
+    gap: 3rem; /* Spazio tra testo e immagine (se presente) */
+    flex-wrap: wrap; /* Va a capo su mobile se necessario */
+}
+
+/* Box con il testo biografico */
+.about-text-box {
+    background-color: rgba(27, 27, 44, 0.22); /* Sfondo scuro/blu trasparente */
+    /* backdrop-filter: blur(8px); */ /* Rimuovi o riduci blur se preferisci più leggibilità */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem 2.5rem; /* Padding interno */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    max-width: 750px; /* Larghezza massima box testo */
+    width: 100%; /* Occupa larghezza disponibile (o imposta fisso) */
+    /* flex-basis: 60%; // Esempio se usi layout a colonne */
+}
+
+.about-text-box p {
+    font-size: 1rem; /* Dimensione testo bio */
+    line-height: 1.7; /* Interlinea leggibile */
+    color: var(--text-secondary); /* Colore testo standard */
+    margin-bottom: 1.2rem; /* Spazio tra paragrafi */
+}
+.about-text-box p:last-child {
+    margin-bottom: 0; /* Rimuovi margine dall'ultimo paragrafo */
+}
+
+
+
+/* Stili per immagine (se la aggiungi) */
+/* .about-image-container { ... } */
+/* .about-image-container img { ... } */
+@media (max-width: 767px) {
+    /* Hero Mobile */
+    .hero-section {
+        padding-top: 150px; /* Riduci ancora un po' se la navbar mobile è più piccola */
+        padding-bottom: 4rem;
+        min-height: auto;
+    }
+    .intro-text {
+        margin-bottom: 4rem; /* Riduci spazio sotto il testo */
+        max-width: 95%;
+    }
+    .intro-text__greeting {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem; /* Meno spazio */
+    }
+
+    /* Headline Mobile (TESTO A CAPO, SOLO CURSORE LAMPEGGIANTE) */
+    .intro-text__headline {
+        font-size: 1.7rem; /* <<<=== AUMENTA LEGGERMENTE FONT ORA CHE VA A CAPO */
+        /*      Prova clamp(1.5rem, 5.5vw, 2rem); */
+        line-height: 1.3;  /* Interlinea per testo a capo */
+        color: var(--text-primary);
+        font-weight: 700;
+        display: block;    /* Necessario per text-align e andare a capo */
+        text-align: center;
+        position: relative; /* Per ::after */
+
+        /* --- RIMUOVE PROPRIETÀ ANIMAZIONE TYPING --- */
+        white-space: normal !important; /* PERMETTE DI ANDARE A CAPO */
+        overflow: visible !important;
+        border-right: none !important;  /* Nessun bordo/cursore typing */
+        width: auto !important;
+        letter-spacing: .02em !important; /* Leggero spacing, o normal */
+        animation: none !important;     /* NESSUNA animazione 'typing' */
+        /* Rimuovi width:0 se presente da tentativi precedenti */
+    }
+
+
+    /* Cursore lampeggiante ALLA FINE del testo mobile */
+    .intro-text__headline::after {
+        display: inline; /* Per stare sulla stessa riga dell'ultima parola */
+        margin-left: 0.1em;
+        color: var(--accent-cyan);
+        font-weight: 300;
+        /* Applica l'animazione blink-caret definita globalmente */
+        animation: blink-caret 0.75s step-end infinite;
+    }
+    .intro-text__headline--highlight {
+        color: var(--accent-cyan);
+        display: inline; /* Mantiene su stessa riga */
+    }
+
+
+    /* Bottoni Hero Mobile */
+    .hero__buttons {
+        display: flex; /* Mantieni in linea */
+        flex-wrap: wrap; /* Permetti di andare a capo se non c'è spazio */
+        justify-content: center; /* Centra i bottoni */
+        gap: 0.8rem; /* Spazio tra bottoni */
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+    .hero__buttons .button-neon { /* O la classe effettiva dei tuoi bottoni Hero */
+        font-size: 0.75rem;
+        padding: 0.7em 1.2em; /* Padding standard */
+        /* Rimuovi width e max-width per farli adattare al testo */
+        /* width: 80%; */
+        /* max-width: 280px; */
+        flex-shrink: 0; /* Non farli rimpicciolire troppo se vanno a capo */
+    }
+
+    .hero__availability-badge {
+        margin-top: 0.1rem;
+        font-size: 0.8rem;
+    }
+
+    .tech-slider-section {
+        padding-bottom: 4rem; /* <<<=== RIDUCI PADDING SOTTO */
+        margin-top: 2rem;
+        margin-bottom: 1.5rem; /* <<<=== RIDUCI MARGINE SOTTO */
+    }
+
+    .projects-visual-slider {
+        padding-top: 1.5rem; /* <<<=== RIDUCI PADDING SOPRA */
+        padding-bottom: 2.5rem;
+    }
+
+    .about-section { padding: 2.5rem 1rem; } /* Riduci padding sezione */
+    .about-section__title {
+        margin-bottom: 2rem;
+        font-size: clamp(1.6rem, 5vw, 2.2rem);
+    }
+    .about-content-wrapper {
+        /* Se hai un'immagine e testo, potresti volere flex-direction: column; */
+    }
+    .about-text-box {
+        padding: 1.5rem;
+        /* ---> AGGIUNGI PER CENTRARE TESTO <--- */
+        text-align: center;
+    }
+    .about-text-box p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        /* Se le p sono block, text-align: center sul genitore basta.
+           Se sono inline, devi mettere text-align sul genitore
+           e assicurarti che le p non abbiano una larghezza che impedisca la centratura. */
+    }
+
+
+    /* ... (altri stili mobile per slider, project card, ecc. come li avevi) ... */
+}
+/* --- KEYFRAMES GLOBALI (Devono essere qui, una sola volta) --- */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; } /* 100% della larghezza naturale del testo con nowrap */
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--accent-cyan); }
+}
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(45, 212, 191, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+}
+@keyframes scrollIcons {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
