@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-// CSS viene importato in index.css
 
 const ButtonNeon = ({ children, onClick, href, download, className = '', type = 'button', disabled = false }) => {
     const motionProps = {

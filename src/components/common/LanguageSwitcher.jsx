@@ -1,4 +1,3 @@
-// src/components/common/LanguageSwitcher.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaGlobeAmericas } from 'react-icons/fa';

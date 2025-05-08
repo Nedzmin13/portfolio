@@ -3,8 +3,8 @@
     padding: 0.8em 1.8em;
     border: 1px solid var(--accent-cyan);
     border-radius: 50px;
-    background-color: transparent; /* SFONDO TRASPARENTE */
-    color: var(--accent-cyan);     /* TESTO CIANO */
+    background-color: transparent;
+    color: var(--accent-cyan);
     font-family: inherit;
     font-size: 0.9rem;
     font-weight: 500;
@@ -12,25 +12,18 @@
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    /* Transizione per box-shadow e forse transform */
     transition: box-shadow 0.3s ease-out, transform 0.2s ease-out, color 0.3s ease-out;
-    position: relative; /* Utile per eventuali pseudo-elementi futuri */
+    position: relative;
 }
 
 .button-neon:hover:not(:disabled),
 .button-neon:focus:not(:disabled) {
-    /* Lo sfondo NON cambia */
-    /* background-color: var(--accent-cyan); */ /* RIMOSSO */
-    /* Il colore del testo potrebbe diventare leggermente più luminoso */
-    color: var(--accent-cyan-darker); /* O mantieni var(--accent-cyan) */
-    /* Aggiungi box-shadow per l'effetto glow */
-    box-shadow: 0 0 15px 3px var(--accent-cyan); /* REGOLA SPREAD (3px) e BLUR (15px) */
-    /* Leggero scale opzionale */
+    color: var(--accent-cyan-darker);
+    box-shadow: 0 0 15px 3px var(--accent-cyan);
     transform: scale(1.02);
     outline: none;
 }
-/* L'effetto hover/focus è gestito da framer-motion,
-   ma aggiungiamo un fallback CSS */
+
 .button-neon:hover,
 .button-neon:focus {
     background-color: rgba(0, 198, 255, 0.1);

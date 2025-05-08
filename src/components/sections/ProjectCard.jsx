@@ -27,7 +27,7 @@ const ProjectCard = ({ project }) => {
     return (
         <motion.div className="project-card-wrapper" /* ... */ >
             <div className="project-card__image-area">
-                <img src={imgMockup} alt={`${title} mockup`} className="project-card__image project-card__image--mockup" loading="lazy" />
+                <img src={imgMockup} alt={`${title} - Mockup Progetto`} className="project-card__image project-card__image--mockup" loading="lazy" />
             </div>
 
             <div className="project-card__content-area">
