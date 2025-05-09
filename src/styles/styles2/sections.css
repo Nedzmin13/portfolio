@@ -1,37 +1,33 @@
-/* src/styles/sections.css */
 
-/* --- Stili Hero Section (Testo Intro + Bottoni/Badge) --- */
 .hero-section {
-    /* section-container gestisce padding laterale/max-width */
-    min-height: 60vh; /* Altezza minima per contenere testo e bottoni comodamente */
-    padding-top: 320px; /* Spazio abbondante sotto la navbar */
-    padding-bottom: 2rem; /* Spazio ridotto sotto il badge, prima dello slider */
+    min-height: 60vh;
+    padding-top: 320px;
+    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra tutto orizzontalmente */
-    text-align: center; /* Centra testo */
+    align-items: center;
+    text-align: center;
     width: 100%;
 }
 
-/* Contenitore per il Testo Introduttivo */
 .intro-text {
-    margin-bottom: 4rem; /* Aumentato spazio tra testo e bottoni sottostanti */
-    max-width: 750px; /* Limita larghezza testo */
-    width: calc(100% - 2rem); /* Leggermente più stretto del container */
+    margin-bottom: 4rem;
+    max-width: 750px;
+    width: calc(100% - 2rem);
 }
 
 .intro-text__greeting {
-    font-size: 1rem; /* Leggermente più grande */
+    font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 1.2rem; /* Più spazio sotto */
+    margin-bottom: 1.2rem;
 }
 
 .intro-text__headline {
-    font-size: clamp(2.2rem, 5.5vw, 3.5rem); /* Dimensione più grande */
-    font-weight: 700; /* Più bold */
+    font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+    font-weight: 700;
     color: var(--text-primary);
     position: relative;
-    display: inline-block; /* Per cursore */
+    display: inline-block;
     line-height: 1.25;
 }
 
@@ -39,11 +35,10 @@
     color: var(--accent-cyan);
 }
 
-/* Cursore lampeggiante */
 .intro-text__headline::after {
     content: '|';
     display: inline-block;
-    margin-left: 0.4em; /* Più spazio */
+    margin-left: 0.4em;
     color: var(--accent-cyan);
     font-weight: 300;
     animation: blinkCursor 1s infinite step-end;
@@ -53,14 +48,12 @@
     50% { color: var(--accent-cyan); }
 }
 
-/* Bottoni (sotto il testo intro) */
 .hero__buttons {
     display: flex;
     gap: 1.2rem;
-    margin-bottom: 2.5rem; /* Spazio tra bottoni e badge */
+    margin-bottom: 2.5rem;
 }
 
-/* Badge Disponibilità (sotto i bottoni) */
 .hero__availability-badge {
     background-color: var(--badge-green-bg); color: var(--badge-green);
     border: 1px solid var(--badge-green-border); padding: 0.4em 0.8em;
@@ -79,24 +72,19 @@
 }
 
 
-/* --- Stili Tech Showcase / Slider (SOLO SLIDER) --- */
 .tech-slider-section {
-    /* section-container per padding laterale/max-width */
-    padding-top: 0;        /* Nessun padding sopra, è sotto Hero ora */
-    padding-bottom: 5rem;  /* Spazio abbondante sotto lo slider */
+    padding-top: 0;
+    padding-bottom: 5rem;
     width: 100%;
 }
 
-/* Wrapper per lo slider (per masking) */
 .tech-slider__wrapper {
-    /* Nessun box nero, solo overflow e masking */
     overflow: hidden;
     width: 100%;
     -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-/* Contenuto dello slider */
 .tech-slider__content {
     display: flex; width: max-content; flex-shrink: 0;
     animation: scrollIcons 35s linear infinite; will-change: transform;
@@ -107,15 +95,14 @@
     to { transform: translateX(-50%); }
 }
 
-/* Item e Icona dello slider */
 .tech-slider__icon-item {
     display: flex; align-items: center; justify-content: center;
-    padding: 0 1.8rem; /* Aumenta un po' spazio tra icone */
+    padding: 0 1.8rem;
     flex-shrink: 0;
 }
 .tech-slider__icon {
-    font-size: 2.8rem; /* Icone leggermente più grandi */
-    color: var(--text-secondary); opacity: 0.6; /* Un po' più opache */
+    font-size: 2.8rem;
+    color: var(--text-secondary); opacity: 0.6;
     transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
 }
 .tech-slider__icon-item:hover .tech-slider__icon {
@@ -123,10 +110,9 @@
 }
 
 
-/* --- Contact Section --- */
 .contact-section {
-    padding-top: 3rem; /* Spazio sopra form contatti */
-    padding-bottom: 5rem; /* Spazio sotto form contatti */
+    padding-top: 3rem;
+    padding-bottom: 5rem;
 }
 
 .contact-form {
@@ -152,4 +138,3 @@
 .form-status-message.success { color: var(--badge-green); }
 .form-status-message.error { color: #ff4d4d; }
 
-/* Rimuovi eventuali stili rimanenti per .tech-showcase-* o .tech-stack-* se non usati */
