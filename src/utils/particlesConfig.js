@@ -1,4 +1,3 @@
-// src/utils/particlesConfig.js
 const particlesConfig = {
     fpsLimit: 60,
     interactivity: {
@@ -13,12 +12,12 @@ const particlesConfig = {
         },
     },
     particles: {
-        color: { value: "#a0a0b0" }, // Grigio chiaro
+        color: { value: "#a0a0b0" },
         links: {
-            color: "#303050", // Viola/blu scuro per linee
+            color: "#303050",
             distance: 150,
             enable: true,
-            opacity: 0.15, // Molto sottili
+            opacity: 0.15,
             width: 1,
         },
         collisions: { enable: false },

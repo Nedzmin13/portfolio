@@ -1,8 +1,7 @@
-// src/pages/PrivacyPolicyPage.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import './PolicyPage.css'; // Crea questo file per lo stile
+import './PolicyPage.css';
 
 const PrivacyPolicyPage = () => {
     const { t } = useTranslation();

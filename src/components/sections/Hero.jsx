@@ -1,22 +1,20 @@
-// src/sections/Hero.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ButtonNeon from '../common/ButtonNeon'; // Assicurati che il percorso sia corretto
+import ButtonNeon from '../common/ButtonNeon';
 
 const Hero = () => {
     const { t } = useTranslation();
 
-    // Funzione per scrollare alla sezione Contatti
     const handleScrollToContact = () => {
-        const element = document.getElementById('contact'); // Cerca l'elemento con ID "contact"
+        const element = document.getElementById('contact');
         if (element) {
-            const navbarHeight = 70; // Altezza della tua navbar fissa (AGGIUSTA SE NECESSARIO)
+            const navbarHeight = 70;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
 
             window.scrollTo({
                 top: offsetPosition,
-                behavior: "smooth" // Scroll animato
+                behavior: "smooth"
             });
         } else {
             console.warn("Elemento con id 'contact' non trovato per lo scroll.");
@@ -28,7 +26,7 @@ const Hero = () => {
             {/* Testo Introduttivo */}
             <div className="intro-text">
                 <p className="intro-text__greeting">
-                    {t('techShowcase.greeting')} {/* Assicurati che queste chiavi esistano nei file di traduzione */}
+                    {t('techShowcase.greeting')}
                 </p>
                 <h2 className="intro-text__headline">
                     {t('techShowcase.headlinePart1')}

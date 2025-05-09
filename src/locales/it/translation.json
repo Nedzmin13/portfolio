@@ -33,7 +33,7 @@
     "sectionTitle": "Progetti Recenti",
     "codenedWeb": { "title": "CodeNed (Web)", "description": "Creazioni siti web e marketing digitale." },
     "shopifyStore": { "title": "Negozio Shopify", "description": "E-commerce per prodotti sostenibili." },
-    "appPreventiviJava": { "title": "Gestionale Preventivi (Desktop)", "description": "Applicazione Java Swing per la creazione di preventivi." },
+    "appPreventiviJava": { "title": "Gestionale Preventivi", "description": "Applicazione Java Swing per la creazione di preventivi." },
     "appPreventiviAndroid": { "title": "App Preventivi (Android)", "description": "Versione mobile per gestione preventivi." },
     "codenedMobile": { "title": "CodeNed (Mobile)", "description": "App React Native per i servizi CodeNed." },
     "lilmetal": { "title": "Lil Metal", "description": "Sito vetrina per servizi di saldatura e carpenteria." },

@@ -34,12 +34,8 @@ function App() {
                     options={options}
                 />
                 <Routes>
-                    {/* Route per la pagina principale, usa il Layout */}
                     <Route path="/" element={<Layout />} />
-                    {/* Route dinamica per le pagine dettaglio progetto */}
                     <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
-                    {/* Aggiungi altre route se necessario (es. 404) */}
-                    {/* <Route path="*" element={<NotFoundPage />} /> */}
                     <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                     <Route path="/cookie-policy" element={<CookiePolicyPage />} />
                 </Routes>
@@ -47,7 +43,7 @@ function App() {
         );
     }
 
-    return null; // Non mostrare nulla finché le particelle non sono pronte
+    return null;
 }
 
 export default App;

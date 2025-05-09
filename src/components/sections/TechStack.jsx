@@ -1,5 +1,4 @@
 import React from 'react';
-// ---> AGGIUNGI/VERIFICA QUESTA RIGA <---
 import { useTranslation } from 'react-i18next';
 import { technologies } from '../../utils/constants';
 

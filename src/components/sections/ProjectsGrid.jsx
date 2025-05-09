@@ -1,11 +1,9 @@
-// src/components/sections/ProjectsGrid.jsx
+
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// ---> IMPORTA DALLA POSIZIONE CORRETTA <---
-import ProjectCard from './ProjectCard'; // Assumendo che sia nella stessa cartella 'sections'
+import ProjectCard from './ProjectCard';
 import { projectsData } from '../../utils/constants';
 
-// Importa il CSS specifico
 import './ProjectsGrid.css';
 
 const ProjectsGrid = () => {

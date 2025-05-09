@@ -33,7 +33,7 @@
     "sectionTitle": "Recent Projects",
     "codenedWeb": { "title": "CodeNed (Web)", "description": "Website creation and digital marketing." },
     "shopifyStore": { "title": "Shopify Store", "description": "E-commerce for sustainable goods." },
-    "appPreventiviJava": { "title": "Quote Manager (Desktop)", "description": "Java Swing application for creating quotes." },
+    "appPreventiviJava": { "title": "Quote Manager", "description": "Java Swing application for creating quotes." },
     "appPreventiviAndroid": { "title": "Quote App (Android)", "description": "Mobile version for quote management." },
     "codenedMobile": { "title": "CodeNed (Mobile)", "description": "React Native app for CodeNed services." },
     "lilmetal": { "title": "Lil Metal", "description": "Showcase site for welding and metalwork services." },

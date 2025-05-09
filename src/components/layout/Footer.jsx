@@ -1,10 +1,8 @@
-// src/components/layout/Footer.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom'; // Per i link interni
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa'; // Icone social
-// Importa il CSS specifico se sposti gli stili del footer qui,
-// altrimenti assicurati siano in layout.css
+import { Link } from 'react-router-dom';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
+
 
 const Footer = () => {
     const { t } = useTranslation();

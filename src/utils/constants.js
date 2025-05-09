@@ -1,23 +1,18 @@
-// src/utils/constants.js
 import {
     FaHome, FaUser, FaBriefcase, FaEnvelope,
-    FaLinkedin, FaGithub, // Importa icone specifiche
-    FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaJava // Esempi tecnologie
+    FaLinkedin, FaGithub,
+    FaReact, FaJsSquare, FaHtml5, FaCss3Alt, FaNodeJs, FaGitAlt, FaJava
 } from 'react-icons/fa';
 import { SiVite, SiMysql } from 'react-icons/si';
 
-// ===================================
-// ASSICURATI CHE OGNI BLOCCO SIA PRECEDEDUTO DA 'export const'
-// ===================================
+
 
 // Link di navigazione principali (4 icone)
 export const navLinks = [
     { id: 'hero', labelKey: 'navbar.home', icon: FaHome },
-    // ---> Questa voce "Esperienza" ora punta alla sezione con id="projects" <---
     { id: 'projects', labelKey: 'navbar.experience', icon: FaBriefcase },
     { id: 'about', labelKey: 'navbar.about', icon: FaUser },
     { id: 'contact', labelKey: 'navbar.contact', icon: FaEnvelope },
-    // RIMUOVI: { id: '...', labelKey: 'navbar.projects', icon: ... } se era un duplicato
 ];
 
 // Link LinkedIn
@@ -33,7 +28,7 @@ export const githubLink = {
     id: 'github',
     labelKey: 'navbar.github',
     icon: FaGithub,
-    url: 'https://github.com/Nedzmin13' // <<<=== METTI IL TUO URL GITHUB
+    url: 'https://github.com/Nedzmin13'
 };
 
 // Tecnologie per la sezione Slider Icone (precedentemente TechShowcase)
@@ -64,11 +59,11 @@ export const projectsData = [
         id: 'codened-web',
         titleKey: 'projects.codenedWeb.title',
         descriptionKey: 'projects.codenedWeb.description',
-        imgSlider: '/images/projects/slider/1.jpg', // Assicurati i path siano corretti
+        imgSlider: '/images/projects/slider/1.jpg',
         imgMockup: '/images/projects/mockups/codened.png',
-        imgClean: '/images/projects/clean/codened.png', // Placeholder
+        imgClean: '/images/projects/clean/codened.png',
         tech: ['React', 'CSS', 'Vite'],
-        githubUrl: 'https://github.com/Nedzmin13/untitled1.git', // Placeholder
+        githubUrl: 'https://github.com/Nedzmin13/untitled1.git',
     },
     {
         id: 'shopify-store',
@@ -76,7 +71,7 @@ export const projectsData = [
         descriptionKey: 'projects.shopifyStore.description',
         imgSlider: '/images/projects/slider/2.jpg',
         imgMockup: '/images/projects/mockups/shopify.png',
-        imgClean: '/images/projects/clean/shopify.png', // Placeholder
+        imgClean: '/images/projects/clean/shopify.png',
         tech: ['Shopify', 'Liquid', 'CSS'],
         githubUrl: null,
     },
@@ -86,9 +81,9 @@ export const projectsData = [
         descriptionKey: 'projects.appPreventiviJava.description',
         imgSlider: '/images/projects/slider/3.jpg',
         imgMockup: '/images/projects/mockups/app-preventivi.png',
-        imgClean: '/images/projects/clean/app-preventivi.png', // Placeholder
+        imgClean: '/images/projects/clean/app-preventivi.png',
         tech: ['Java', 'Swing', 'MySQL'],
-        githubUrl: 'https://github.com/Nedzmin13/PreventiviApp.git', // Placeholder
+        githubUrl: 'https://github.com/Nedzmin13/PreventiviApp.git',
     },
     {
         id: 'app-preventivi-android',
@@ -96,9 +91,9 @@ export const projectsData = [
         descriptionKey: 'projects.appPreventiviAndroid.description',
         imgSlider: '/images/projects/slider/4.jpg',
         imgMockup: '/images/projects/mockups/android-preventivi.png',
-        imgClean: '/images/projects/clean/android-preventivi.png', // Placeholder
+        imgClean: '/images/projects/clean/android-preventivi.png',
         tech: ['Java', 'Android', 'SQLite'],
-        githubUrl: 'https://github.com/Nedzmin13/preventivi-app.git', // Placeholder
+        githubUrl: 'https://github.com/Nedzmin13/preventivi-app.git',
     },
     {
         id: 'codened-mobile',
@@ -106,9 +101,9 @@ export const projectsData = [
         descriptionKey: 'projects.codenedMobile.description',
         imgSlider: '/images/projects/slider/5.jpg',
         imgMockup: '/images/projects/mockups/codened2.png',
-        imgClean: '/images/projects/clean/codened2.png', // Placeholder
+        imgClean: '/images/projects/clean/codened2.png',
         tech: ['React Native', 'Expo'],
-        githubUrl: 'https://github.com/tuo-username/codened-mobile-repo', // Placeholder
+        githubUrl: 'https://github.com/tuo-username/codened-mobile-repo',
     },
     {
         id: 'lilmetal',
@@ -116,8 +111,8 @@ export const projectsData = [
         descriptionKey: 'projects.lilmetal.description',
         imgSlider: '/images/projects/slider/6.jpg',
         imgMockup: '/images/projects/mockups/lilmetal.png',
-        imgClean: '/images/projects/clean/lilmetal.png', // Placeholder
+        imgClean: '/images/projects/clean/lilmetal.png',
         tech: ['HTML', 'CSS', 'JavaScript'],
-        githubUrl: 'https://github.com/Nedzmin13/LIL-METAL.git', // Placeholder
+        githubUrl: 'https://github.com/Nedzmin13/LIL-METAL.git',
     },
 ];

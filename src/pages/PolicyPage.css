@@ -1,10 +1,9 @@
-/* src/pages/PolicyPage.css */
 
 .policy-page-container {
-    padding-top: 100px; /* Spazio sotto navbar fissa */
+    padding-top: 100px;
     padding-bottom: 4rem;
-    min-height: calc(100vh - 70px); /* Altezza minima meno navbar */
-    color: var(--text-secondary); /* Colore testo default */
+    min-height: calc(100vh - 70px);
+    color: var(--text-secondary);
 }
 
 .back-to-home-link {
@@ -20,7 +19,7 @@
 
 .policy-title {
     font-size: clamp(1.8rem, 5vw, 2.5rem);
-    color: var(--text-primary); /* Titolo pagina più chiaro */
+    color: var(--text-primary);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -34,10 +33,10 @@
 
 .policy-content h2 {
     font-size: 1.4rem;
-    color: var(--text-primary); /* Sottotitoli chiari */
+    color: var(--text-primary);
     margin-top: 2.5rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Linea separatrice */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 0.5rem;
 }
 
@@ -46,7 +45,7 @@
     margin-bottom: 1rem;
 }
 
-.policy-content a { /* Stile link dentro policy */
+.policy-content a {
     color: var(--accent-cyan);
 }
 .policy-content a:hover {

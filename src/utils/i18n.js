@@ -1,4 +1,3 @@
-// src/utils/i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
@@ -15,9 +14,9 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        fallbackLng: 'it', // Lingua predefinita
-        debug: false, // Disabilita in produzione
-        interpolation: { escapeValue: false }, // React già gestisce l'escaping
+        fallbackLng: 'it',
+        debug: false,
+        interpolation: { escapeValue: false },
         detection: {
             order: ['cookie', 'localStorage', 'navigator', 'htmlTag'],
             caches: ['cookie', 'localStorage'],

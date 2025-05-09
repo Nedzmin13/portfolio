@@ -1,9 +1,7 @@
-/* src/styles/base.css */
 :root {
-    /* Palette scura con accento ciano */
-    --bg-dark-primary: #05050a;     /* Nero/blu scurissimo */
-    --bg-dark-secondary: #0d0d1f; /* Blu/viola scuro per gradienti/elementi */
-    --bg-card: rgba(15, 15, 35, 0.4); /* Sfondo semi-trasparente card */
+    --bg-dark-primary: #05050a;
+    --bg-dark-secondary: #0d0d1f;
+    --bg-card: rgba(15, 15, 35, 0.4);
     --text-primary: #f6f5f5;
     --text-secondary: #e6e6ea;
     --accent-cyan: #00c6ff;
@@ -28,8 +26,8 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Scroll morbido per link interni */
-    font-size: 16px; /* Base per REM */
+    scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
@@ -37,11 +35,10 @@ body {
     line-height: 1.6;
     font-weight: 400;
     color: var(--text-primary);
-    background-color: var(--bg-dark-primary); /* Colore di sfondo base */
+    background-color: var(--bg-dark-primary);
     min-height: 100vh;
-    overflow-x: hidden; /* Previene scroll orizzontale */
+    overflow-x: hidden;
 
-    /* Stili per la scrollbar (opzionale, ma carino su temi scuri) */
     scrollbar-width: thin;
     scrollbar-color: var(--accent-cyan) var(--bg-dark-secondary);
 }
@@ -84,11 +81,10 @@ img {
     display: block;
 }
 
-/* Contenitore standard per sezioni */
 .section-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 4rem 2rem; /* Spazio sopra/sotto e laterale */
+    padding: 4rem 2rem;
 }
 
 /* Stile per titoli di sezione */
@@ -97,7 +93,7 @@ img {
     margin-bottom: 3rem;
     text-align: center;
     color: var(--text-primary);
-    position: relative; /* Per eventuale linea sotto */
+    position: relative;
 }
 /* Linea sotto titolo (opzionale) */
 .section-title::after {
@@ -110,7 +106,6 @@ img {
     border-radius: 2px;
 }
 
-/* Nascondi visivamente ma accessibile per screen reader */
 .sr-only {
     position: absolute;
     width: 1px;

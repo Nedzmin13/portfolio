@@ -1,7 +1,5 @@
-// src/components/sections/ProjectCard.jsx
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-// Rimuovi 'Link' da 'react-router-dom' se non lo usi più per questo componente
 // import { Link } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
 import { motion } from 'framer-motion';
@@ -14,7 +12,7 @@ const ProjectCard = ({ project }) => {
         titleKey,
         descriptionKey,
         imgMockup,
-        // imgClean, // Rimuovi se non usi più l'effetto hover con scambio immagine
+        // imgClean,
         tech,
         githubUrl
     } = project;
@@ -38,13 +36,10 @@ const ProjectCard = ({ project }) => {
                 )}
                 <h3 className="project-card__title">{title}</h3>
 
-                {/* ---> NUOVO WRAPPER PER DESCRIZIONE E LINK <--- */}
                 <div className="project-card__description-link-wrapper">
                     <p className="project-card__description">{description}</p>
                     <div className="project-card__links">
-                        {/* Manteniamo il link GitHub per ora, ma potresti sostituirlo con un'icona diversa */}
                         {githubUrl && ( <a href={githubUrl} /* ... */ > <FaGithub /> </a> )}
-                        {/* <Link to={`/projects/${id}`} ... > <svg /> </Link> */}
                     </div>
                 </div>
             </div>

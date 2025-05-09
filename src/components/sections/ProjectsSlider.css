@@ -1,32 +1,27 @@
-/* src/components/sections/ProjectsSlider.css */
 
-/* Contenitore principale della sezione slider con maschera laterale */
 .projects-visual-slider {
     width: 100%;
-    padding: 3rem 0 4rem; /* Spazio sopra/sotto */
+    padding: 3rem 0 4rem;
     position: relative;
-    /* Maschera per sfumare i lati */
     -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-    overflow: hidden; /* Nasconde ciò che esce dalla maschera */
+    overflow: hidden;
 }
 
 /* Stile del contenitore Swiper principale */
 .projectsVisualSwiper {
     width: 100%;
-    overflow: visible !important; /* Permette al wrapper interno di essere più largo */
+    overflow: visible !important;
     padding-bottom: 0 !important;
-    /* Rimuovi padding laterale, la maschera crea l'effetto bordo */
     box-sizing: border-box;
 }
 
 /* Contenitore interno delle slide generato da Swiper */
 .projectsVisualSwiper .swiper-wrapper {
     display: flex;
-    width: max-content; /* Larghezza totale delle slide duplicate */
+    width: max-content;
     flex-wrap: nowrap;
-    /* ---> ANIMAZIONE CSS PER SCORRIMENTO CONTINUO <--- */
-    animation: continuousScroll 45s linear infinite; /* REGOLA DURATA (45s) PER VELOCITÀ */
+    animation: continuousScroll 45s linear infinite;
     will-change: transform;
 }
 /* Pausa animazione su hover */
@@ -37,20 +32,18 @@
 /* Keyframes per l'animazione */
 @keyframes continuousScroll {
     from { transform: translateX(0); }
-    /* Sposta a sinistra della larghezza esatta del primo set di slide */
     to { transform: translateX(-50%); }
 }
 
 
 /* Stile delle singole slide */
 .project-visual-slide {
-    /* Larghezza slide - REGOLA QUESTI VALORI! */
-    width: clamp(400px, 40vw, 550px) !important; /* Esempio: Min 320, Preferito 35% viewport, Max 480 */
+    width: clamp(400px, 40vw, 550px) !important;
 
     height: auto !important;
-    aspect-ratio: 16 / 10; /* <<<=== AGGIUSTA PROPORZIONI IMMAGINI */
-    margin-right: 30px;    /* <<<=== SPAZIO TRA SLIDE (Regola) */
-    flex-shrink: 0;        /* Non farla restringere */
+    aspect-ratio: 16 / 10;
+    margin-right: 30px;
+    flex-shrink: 0;
 
     background: var(--bg-card);
     display: flex;
@@ -60,10 +53,10 @@
     border-radius: 12px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.35);
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    cursor: default; /* Non più trascinabile */
+    cursor: default;
 }
 .project-visual-slide:hover {
-    transform: translateY(-10px) scale(1.03); /* Mantiene hover */
+    transform: translateY(-10px) scale(1.03);
 }
 
 /* Immagine dentro la slide */
@@ -78,35 +71,30 @@
 
 @media (max-width: 767px) {
     .projects-visual-slider {
-        padding: 2rem 0 3rem; /* Riduci padding verticale della sezione */
-        /* Puoi anche ridurre la sfumatura laterale se le slide sono più piccole */
+        padding: 2rem 0 3rem;
         /* -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
         /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
     }
 
     .projectsVisualSwiper {
-        /* Non serve padding laterale se usi la maschera sul genitore */
     }
 
     .projectsVisualSwiper .swiper-wrapper {
-        /* Potresti voler rendere l'animazione un po' più veloce su mobile
-           se ci sono meno slide visibili o se sono più piccole */
-        /* animation-duration: 35s; */
+               /* animation-duration: 35s; */
     }
 
     .project-visual-slide {
-        /* ---> RIDUCI LARGHEZZA SLIDE PER MOBILE <--- */
-        width: clamp(220px, 65vw, 300px) !important; /* Esempio: Min 220, Pref 65% viewport, Max 300 */
-        /* Oppure una larghezza fissa più piccola: */
-        /* width: 250px !important; */
 
-        /* ---> AGGIUSTA ASPECT RATIO SE NECESSARIO PER MOBILE <--- */
-        aspect-ratio: 16 / 10; /* O 4/3 se le immagini sono più quadrate */
-        margin-right: 20px; /* Riduci spazio tra slide */
-        border-radius: 10px; /* Riduci leggermente radius */
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Ombra più leggera */
+        width: clamp(220px, 65vw, 300px) !important;
+             /* width: 250px !important; */
+
+
+        aspect-ratio: 16 / 10;
+        margin-right: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
     .project-visual-slide:hover {
-        transform: translateY(-6px) scale(1.02); /* Effetto hover meno pronunciato */
+        transform: translateY(-6px) scale(1.02);
     }
 }

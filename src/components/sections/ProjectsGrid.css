@@ -1,24 +1,22 @@
-/* src/components/sections/ProjectsGrid.css */
 
 .projects-grid-section {
-    padding-top: 1rem; /* Spazio sopra il titolo */
-    padding-bottom: 5rem; /* Spazio sotto la griglia */
+    padding-top: 1rem;
+    padding-bottom: 5rem;
 }
 
 .projects-grid__title {
-    font-size: clamp(2rem, 5vw, 2.8rem); /* Riprendi la dimensione desiderata */
-    font-weight: 600; /* Riprendi il peso desiderato */
-    color: var(--text-primary); /* Colore testo */
-    text-align: center; /* Centra */
-    margin-bottom: 8rem; /* Spazio sotto il titolo, prima della griglia (REGOLA) */
-    /* NON c'è ::after qui, quindi nessuna linea */
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 8rem;
 }
 
 /* Stile Griglia Progetti */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* Adatta larghezza minima card */
-    gap: 6.5rem; /* Aumenta spazio tra card */
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 6.5rem;
 }
 
 @media (max-width: 768px) {
@@ -26,19 +24,19 @@
         padding-top: 3.5rem;
         padding-bottom: 3rem;
     }
-    .projects-grid__title { /* Se usi questa classe per il titolo "Progetti Recenti" */
+    .projects-grid__title {
         font-size: clamp(1.6rem, 5vw, 2.2rem);
         margin-bottom: 5rem;
     }
     .projects-grid {
-        grid-template-columns: 1fr; /* <<<=== UNA COLONNA SU MOBILE */
-        gap: 2rem; /* Spazio tra le card in colonna */
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }
 
 @media (max-width: 640px) {
     .projects-grid {
-        grid-template-columns: 1fr; /* Una colonna su mobile */
+        grid-template-columns: 1fr;
         gap: 2.5rem;
     }
 }

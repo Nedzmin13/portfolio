@@ -1,4 +1,3 @@
-/* src/components/sections/ProjectCard.css */
 
 /* Wrapper Card: Contesto posizionamento, hover transform, padding top per immagine */
 .project-card-wrapper {
@@ -8,43 +7,42 @@
     background: transparent;
     border: none;
     box-shadow: none;
-    padding-top: 150px; /* Spazio sopra box testo (REGOLA) */
+    padding-top: 150px;
     overflow: visible;
     display: flex;
     flex-direction: column;
 }
 .project-card-wrapper:hover {
-    transform: translateY(-8px); /* Solleva l'intera struttura (wrapper+immagine+testo) */
+    transform: translateY(-8px);
 }
 
 .project-card__image-area {
     position: absolute;
-    top: -100px;        /* Sposta più in alto (REGOLA) */
+    top: -100px;
     left: 50%;
     transform: translateX(-50%);
-    width: 110%;         /* <<<=== AUMENTA LARGHEZZA AREA IMMAGINE */
-    aspect-ratio: 17 / 10; /* <<<=== IMPOSTA PROPORZIONI CORRETTE PER IMMAGINI PIÙ LARGHE */
+    width: 110%;
+    aspect-ratio: 17 / 10;
     z-index: 1;
     pointer-events: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 0; /* Rimuovi margine negativo se non serve più con questo approccio */
+    margin-bottom: 0;
 }
 
 /* Immagine Mockup: Posizionata assolutamente NELLO SPAZIO creato dal padding-top del wrapper */
 .project-card__image--mockup {
     display: block;
-    /* ---> AUMENTA DIMENSIONE MASSIMA <--- */
-    max-width: 100%;    /* Permetti di occupare tutta l'area */
-    max-height: 100%;   /* Permetti di occupare tutta l'area */
+    max-width: 100%;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    position: relative; /* Mantiene z-index sopra glow */
+    position: relative;
     z-index: 2;
-    filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.4)); /* Ombra più pronunciata */
-    transition: transform 0.3s ease-out; /* Rimuovi transizione se non vuoi zoom */
+    filter: drop-shadow(0px 12px 18px rgba(0, 0, 0, 0.4));
+    transition: transform 0.3s ease-out;
 }
 /* Leggero zoom immagine su hover del wrapper (OPZIONALE) */
 .project-card-wrapper:hover .project-card__image--mockup {
@@ -55,58 +53,56 @@
 .project-card-wrapper::before {
     content: '';
     position: absolute;
-    /* Posiziona il centro del glow un po' sotto il centro dell'area immagine */
-    top: 45%; /* <<<=== Posizione verticale glow (REGOLA) */
+    top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centra il gradiente */
-    width: 120%; /* Larghezza glow (più largo dell'immagine) */
-    height: 120%; /* Altezza glow (più alto dell'immagine) */
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
     background: radial-gradient(ellipse at center,
-    rgba(0, 198, 255, 0.25) 0%, /* Colore e opacità (REGOLA) */
-    rgba(0, 198, 255, 0) 65%    /* Trasparente ai bordi */
+    rgba(0, 198, 255, 0.25) 0%,
+    rgba(0, 198, 255, 0) 65%
     );
-    filter: blur(35px); /* Sfocatura (REGOLA) */
-    z-index: 1; /* Dietro l'immagine mockup */
-    opacity: 0; /* Nascosto di default */
+    filter: blur(35px);
+    z-index: 1;
+    opacity: 0;
     transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, width 0.4s ease-in-out, height 0.4s ease-in-out, background 0.4s ease-in-out, filter 0.4s ease-in-out;
     pointer-events: none;
 }
 .project-card-wrapper:hover::before {
-    opacity: 1; /* Mostra glow su hover */
-    width: 130%; /* Leggermente più largo */
-    height: 130%; /* Leggermente più alto */
-    /* transform: translate(-50%, -45%); /* Sposta leggermente in basso il centro */
-    filter: blur(30px); /* Meno sfocato = più intenso */
+    opacity: 1;
+    width: 130%;
+    height: 130%;
+    /* transform: translate(-50%, -45%);  */
+    filter: blur(30px);
 }
 
 
 /* Area Contenuto Testuale: Box con sfondo/blur, segue il flusso */
 .project-card__content-area {
-    background-color: transparent; /* Sfondo nero/blu scuro */
+    background-color: transparent;
     backdrop-filter: blur(12px);
     border: 1px solid rgba(140, 119, 119, 0.1);
-    border-radius: 16px; /* Arrotonda angoli del box testo */
-    padding: 1.5rem; /* Padding lati/fondo */
-    /* ---> Padding top NORMALE, lo spazio è creato dal padding del wrapper <--- */
-    padding-top: 1.5rem; /* Padding normale sopra i tag tech */
+    border-radius: 16px;
+    padding: 1.5rem;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    position: relative; /* Normale nel flusso */
-    z-index: 0; /* Sta sotto l'immagine */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Ombra sul box */
+    position: relative;
+    z-index: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     width: 100%;
     box-sizing: border-box;
-    /* L'altezza si adatta al contenuto */
-    flex-grow: 1; /* Fa sì che occupi lo spazio verticale rimanente nel wrapper */
+
+    flex-grow: 1;
 }
 
 /* Lista Tecnologie */
 .project-card__tech-list {
     display: flex; flex-wrap: wrap; gap: 0.3rem;
-    margin-bottom: 1rem; /* Spazio prima del titolo */
+    margin-bottom: 1rem;
 }
 .project-card__tech-item {
-    /* Stile badge scuro */
+
     background-color: rgba(40, 40, 60, 0.8);
     color: var(--text-secondary);
     padding: 0.25em 0.6em;
@@ -124,19 +120,18 @@
 .project-card__description {
     font-size: 0.9rem; color: var(--text-secondary); line-height: 1.2;
     margin-bottom: -3rem;
-    /* Rimosso flex-grow, l'area contenuto si espande */
 }
 
 /* Link */
 .project-card__links {
     display: flex; align-items: center; justify-content: flex-end;
     gap: 0.2rem;
-    margin-top: auto; /* Spinge in fondo */
+    margin-top: auto;
 }
 
 .project-card__link.project-card__link--github-main {
     color: var(--text-secondary);
-    font-size: 1.2rem; /* O la dimensione che preferisci per GitHub */
+    font-size: 1.2rem;
     padding: 0.5rem;
     border-radius: 50%;
     transition: color 0.2s ease, background-color 0.2s ease;
@@ -167,10 +162,10 @@
     background-color: rgba(0, 198, 255, 0.15);
 }
 .project-card__link svg { width: 1em; height: 1em; }
-.project-card__link--github { display: none; } /* Nascondi GitHub */
+.project-card__link--github { display: none; }
 
 .project-card__link--disabled {
-    color: rgba(128, 128, 128, 0.5); /* Grigio trasparente */
+    color: rgba(128, 128, 128, 0.5);
     font-size: 1.2rem;
     padding: 0.5rem;
     cursor: not-allowed;
@@ -185,29 +180,28 @@
 
 @media (max-width: 767px) {
     .project-card-wrapper {
-        position: relative; /* Necessario per posizionare assolutamente l'immagine */
+        position: relative;
         background: transparent;
-        border-radius: 20px; /* Radius più accentuato come nell'esempio */
-        overflow: visible; /* Permetti all'immagine di uscire sopra */
+        border-radius: 20px;
+        overflow: visible;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end; /* Allinea il content-area in basso */
-        /* Rimuovi padding-top, lo spazio sarà gestito dal content-area */
-        /* Aggiungi un'altezza minima alla card se necessario per la griglia */
-        min-height: 280px; /* <<<=== VALORE INDICATIVO, REGOLA! */
-        margin-bottom: 30px; /* Spazio sotto la card se non dato dalla griglia */
+        justify-content: flex-end;
+
+        min-height: 280px;
+        margin-bottom: 30px;
     }
 
 
     /* Area Immagine Mobile */
     .project-card__image-area {
         position: absolute;
-        top: -20px; /* VALORE DA REGOLARE */
+        top: -20px;
         left: 50%;
         transform: translateX(-50%);
-        width: 90%; /* VALORE DA REGOLARE */
-        aspect-ratio: 16 / 9; /* VALORE DA REGOLARE */
-        z-index: 2; /* <<<=== PORTA L'IMMAGINE SOPRA IL GLOW */
+        width: 90%;
+        aspect-ratio: 16 / 9;
+        z-index: 2;
         pointer-events: none;
         display: flex;
         align-items: center;
@@ -217,115 +211,110 @@
     .project-card__image--mockup {
         display: block;
         max-width: 150%;
-        max-height: 200px; /* <<<=== ALTEZZA MASSIMA MOCKUP (REGOLA!) */
+        max-height: 200px;
         width: auto;
         height: auto;
         object-fit: contain;
         filter: drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.4));
         transition: transform 0.3s ease-out;
-        position: relative; /* Per z-index se ::before è figlio di questo */
-        z-index: 1; /* Sopra il glow se il glow è figlio del wrapper */
+        position: relative;
+        z-index: 1;
     }
 
 
-    /* Effetto Glow Mobile (Semplificato per ora) */
 
 
 
     /* Area Contenuto Testuale Mobile */
     .project-card__content-area {
-        background-color: rgba(19, 19, 30, 0.12); /* Sfondo nero/blu scuro */
+        background-color: rgba(19, 19, 30, 0.12);
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(170, 168, 168, 0.08); /* Bordo più sottile */
-        border-radius: 20px; /* Stesso radius del wrapper */
-        padding: 1rem; /* Padding generale */
-        /* ---> PADDING TOP PER FARE SPAZIO ALL'IMMAGINE SOVRAPPOSTA <--- */
-        /* Deve essere l'altezza della parte di immagine che si sovrappone + margine per i tag */
-        padding-top: 10px;  /* <<<=== VALORE CRUCIALE DA REGOLARE! (es. 60px, 70px, 90px) */
+        border: 1px solid rgba(170, 168, 168, 0.08);
+        border-radius: 20px;
+        padding: 1rem;
+        padding-top: 10px;
         display: flex;
         flex-direction: column;
-        position: relative; /* Mantiene nel flusso normale */
-        z-index: 0; /* Sotto l'immagine */
+        position: relative;
+        z-index: 0;
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         width: 100%;
         box-sizing: border-box;
-        /* Altezza si adatta al contenuto. Rimuovi flex-grow e min-height espliciti se non servono */
     }
 
     /* Lista Tecnologie (Badge sopra il titolo) */
     .project-card__tech-list {
         display: flex; flex-wrap: wrap; gap: 0.5rem;
-        margin-bottom: 0.7rem; /* Spazio ridotto prima del titolo */
-        position: absolute; /* Posiziona rispetto a content-area */
-        top: 1rem; /* Spazio dal bordo superiore del content-area */
-        left: 1rem; /* Spazio dal bordo sinistro */
+        margin-bottom: 0.7rem;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
     }
     .project-card__tech-item {
-        background-color: rgba(50, 50, 70, 0.7); /* Sfondo badge */
-        color: rgba(255, 255, 255, 0.8); /* Testo badge */
+        background-color: rgba(50, 50, 70, 0.7);
+        color: rgba(255, 255, 255, 0.8);
         padding: 0.2em 0.5em;
         border-radius: 4px;
-        font-size: 0.6rem; /* Molto piccolo */
+        font-size: 0.6rem;
         font-weight: 500;
         border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     /* Titolo */
     .project-card__title {
-        font-size: 1.3rem; /* Come nell'esempio Coinstar */
+        font-size: 1.3rem;
         font-weight: 600; color: var(--text-primary);
-        margin-bottom: 0.25rem; /* Meno spazio sotto */
-        /* Spazio per i tag se sono assoluti */
-        padding-top: 2.5rem; /* <<<=== AGGIUNGI PADDING-TOP SE I TAG SONO ASSOLUTI SOPRA */
+        margin-bottom: 0.25rem;
+        padding-top: 2.5rem;
     }
 
     /* Descrizione e Link (ora in un contenitore flex per allinearli) */
     .project-card__description-link-wrapper {
         display: flex;
-        justify-content: space-between; /* Spinge descrizione a sinistra, link a destra */
-        align-items: center; /* Allinea verticalmente */
-        margin-top: 0.25rem; /* Spazio sopra */
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 0.25rem;
     }
 
     .project-card__description {
-        font-size: 0.8rem; /* Come Coinstar */
+        font-size: 0.8rem;
         color: var(--text-secondary); line-height: 1.4;
-        margin-bottom: 0; /* Rimosso margine, gestito da wrapper */
-        text-align: left; /* Allinea descrizione a sinistra */
-        flex-grow: 1; /* Occupa spazio disponibile */
+        margin-bottom: 0;
+        text-align: left;
+        flex-grow: 1;
     }
 
     .project-card__links {
-        margin-top: 0; /* Rimosso margin-top:auto */
-        flex-shrink: 0; /* Non farlo rimpicciolire */
+        margin-top: 0;
+        flex-shrink: 0;
     }
-    /* Stile icona link (asterisco o freccia come in Coinstar) */
+
     .project-card__link {
-        color: var(--text-primary); /* Colore bianco/chiaro */
+        color: var(--text-primary);
         font-size: 1.1rem;
         padding: 0.4rem;
         border-radius: 50%;
-        background-color: rgba(50, 50, 70, 0.7); /* Sfondo simile ai tag */
+        background-color: rgba(50, 50, 70, 0.7);
         border: 1px solid rgba(255, 255, 255, 0.1);
         display: flex; align-items: center; justify-content: center;
         transition: background-color 0.2s ease, color 0.2s ease;
     }
     .project-card__link:hover { /* ... */ }
     .project-card__link svg { /* ... */ }
-    .project-card__link--github { display: none; } /* Nascondi GitHub se usi l'icona "dettagli" */
+    .project-card__link--github { display: none; }
 
-    /* ... (altri stili mobile per le altre sezioni) ... */
+
 }
 
 @keyframes glow-pulse {
     0% {
-        transform: translate(-50%, 5%) scale(1.65); /* Scala base e posizione */
+        transform: translate(-50%, 5%) scale(1.65);
         opacity: 0.6;
         filter: blur(30px);
     }
     100% {
-        transform: translate(-50%, 10%) scale(1.05); /* Leggermente più grande e su */
-        opacity: 0.8; /* Più opaco */
-        filter: blur(25px); /* Meno sfocato */
+        transform: translate(-50%, 10%) scale(1.05);
+        opacity: 0.8;
+        filter: blur(25px);
     }
 }
