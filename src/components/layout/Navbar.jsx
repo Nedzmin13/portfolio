@@ -8,19 +8,18 @@ import { navLinks, linkedinLink, githubLink } from '../../utils/constants';
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();
-    const [activeLink, setActiveLink] = useState('hero'); // Stato per link attivo
+    const [activeLink, setActiveLink] = useState('hero');
 
 
     // Funzione scroll/link
     const handleNavClick = (link) => {
-        if (link.url) { // Gestisce link esterni (LinkedIn/GitHub)
+        if (link.url) {
             window.open(link.url, '_blank', 'noopener noreferrer');
             return;
         }
-        // Gestisce scroll interno
         const element = document.getElementById(link.id);
         if (element) {
-            const navbarHeight = 70; // O 60 per mobile? Meglio leggerla dinamicamente se cambia
+            const navbarHeight = 70;
             const elementPosition = element.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
             window.scrollTo({ top: offsetPosition, behavior: "smooth" });
@@ -30,11 +29,10 @@ const Navbar = () => {
         }
     };
 
-    // Effetto per aggiornare link attivo durante lo scroll
     useEffect(() => {
         const handleScroll = () => {
             let currentBestId = 'hero'; // Default
-            const scrollThreshold = window.innerHeight * 0.4; // Punto di attivazione (40% dall'alto)
+            const scrollThreshold = window.innerHeight * 0.4;
 
             const sectionsToCheck = navLinks.map(link => link.id);
 
@@ -59,14 +57,13 @@ const Navbar = () => {
             setActiveLink(currentBestId);
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true }); // Usa passive listener per performance
-        handleScroll(); // Esegui subito per stato iniziale corretto
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
 
 
         return () => window.removeEventListener('scroll', handleScroll);
     }, [navLinks]);
 
-    // Funzione per cambiare lingua
     const toggleLanguage = () => {
         const nextLanguage = (i18n.language || 'it').startsWith('it') ? 'en' : 'it';
         i18n.changeLanguage(nextLanguage);
@@ -80,7 +77,6 @@ const Navbar = () => {
 
             <div className="navbar__main-navigation-container">
                 <div className="navbar__navigation">
-                    {/* Icone Navigazione */}
                     {navLinks.map((link) => (
                         <motion.button
                             key={link.id}

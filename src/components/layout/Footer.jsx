@@ -14,8 +14,7 @@ const Footer = () => {
 
     return (
         <footer className="site-footer">
-            <div className="footer-content section-container"> {/* Usa section-container per allineamento */}
-                {/* Icone Social */}
+            <div className="footer-content section-container">
                 <div className="footer-social-icons">
                     <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="footer-social-link">
                         <FaLinkedinIn />
@@ -25,12 +24,10 @@ const Footer = () => {
                     </a>
                 </div>
 
-                {/* Testo Copyright */}
                 <p className="footer-copyright">
                     © {currentYear} Nedzmin Cancar. {t('footer.rightsReserved')}
                 </p>
 
-                {/* Link Policy */}
                 <nav className="footer-policy-links">
                     <Link to="/privacy-policy" className="footer-policy-link">{t('footer.privacyPolicy')}</Link>
                     <span className="footer-policy-separator">|</span>
