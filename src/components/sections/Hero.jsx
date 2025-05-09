@@ -38,7 +38,7 @@ const Hero = () => {
 
             {/* Bottoni e Badge */}
             <div className="hero__buttons">
-                <ButtonNeon href="/public/cv/cancarNedzmin.pdf" download>
+                <ButtonNeon href="/cv/cancarNedzmin.pdf" download>
                     {t('hero.cvButton')}
                 </ButtonNeon>
                 {/* Questo bottone chiama handleScrollToContact */}
